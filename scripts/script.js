@@ -51,7 +51,7 @@ function listMyBooks(){
             li.addEventListener('click', function(e){
                 e.stopPropagation();
                 e.preventDefault();
-                open('/view.html' + li.getAttribute('data-params'));
+                open('https://ansuman-dhar.github.io/slambook/view.html' + li.getAttribute('data-params'));
             });
             name.textContent = e.name;
             date.textContent = e.date;
@@ -87,7 +87,7 @@ function listSignedBooks(){
             li.addEventListener('click', function(e){
                 e.stopPropagation();
                 e.preventDefault();
-                open('/view.html' + li.getAttribute('data-params'));
+                open('https://ansuman-dhar.github.io/slambook/view.html' + li.getAttribute('data-params'));
             })
             name.textContent = e.name;
             date.textContent = e.date;
