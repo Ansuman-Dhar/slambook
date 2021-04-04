@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Know your friends!">
+    <link rel="stylesheet" href="./styles/share.css">
+	<link rel="stylesheet" href="./styles/style.css">
+	<title>SlamBook | Home</title>
+	<style>
+        .loader {
+            vertical-align: super;
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px;
+            font-size: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ffffff;
+            background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+            position: relative;
+            animation: load3 0.75s infinite cubic-bezier(.15, .53, .69, .4);
+            transform: translateZ(0);
+        }
+        
+        .navbar .loader {
+            cursor: pointer;
+            display: none;
+            vertical-align: baseline;
+        }
+        
+        .rightNav .loader {
+            display: inline-block;
+        }
+        
+        .loader:before {
+            width: 50%;
+            height: 50%;
+            background: #ffffff;
+            border-radius: 100% 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+        }
+        
+        .loader:after {
+            background: #000;
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            content: '';
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        
+        @keyframes load3 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementsByClassName('loader')[0].style.display = 'none';
+            document.getElementsByClassName('loader')[1].style.display = 'none';
+        })
+    </script>
+</head>
+<body>
+	<nav class="navbar background section-m h-nav-resp">
+        <span id="text">SlamBook</span>
+        <div class="loader"></div>
+        <ul class="nav-list v-class-resp">            
+            <li><a href="#">Home</a></li>
+            <li><a href="#yourBooks">My SlamBooks</a></li>
+            <li><a href="#signedBooks">Signed SlamBooks</a></li>
+            <!--Add onclick="classlistToggle()" on responsive design-->
+        </ul>
+        <div class="rightNav v-class-resp">
+            <div class="loader"></div>
+            <div class="text-big user-icon">
+				<span id="user">Unknown</span>
+                <i class="fas fa-user" onclick="user()"></i>
+            </div>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+	<div id="cookieAlert">
+		<h1>
+			Please allow us to store and access cookies on your browser<br>
+			Do not worry!<br>
+			We only store and access essential data which is vital for this site to work<br>
+			<br><br>
+			By clicking "I allow",<br>
+			we will have rights to store in and access cookies from your browser on this site<br>
+			<button onclick="allowCookies(true)" style="position: absolute; left: 50%; bottom: 40%; transform: translate(-50%, -50%);">I allow</button>
+		</h1>
+	</div>
+
+    <div id="sharedialog" class="share-dialog">
+        <header>
+        <h3 class="dialog-title">Share your Book link</h3>
+        <button onclick="document.getElementById('sharedialog').classList.remove('is-open');" class="close-button"><svg><use href="#close"></use></svg></button>
+        </header>
+
+        <div class="targets">
+            <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ansuman-dhar.github.io/slambook/fillup.html?bookid=' + id_Global)" class="button">
+            <svg>
+            <use href="#facebook"></use>
+            </svg>
+            <span>Facebook</span>
+            </a>
+
+            <a onclick="window.open('https://twitter.com/share?text=Sign My SlamBook&url=https://ansuman-dhar.github.io/slambook/fillup.html?bookid=' + id_Global)"  class="button">
+            <svg>
+            <use href="#twitter"></use>
+            </svg>
+            <span>Twitter</span>
+            </a>
+
+            <a onclick="window.open('https://web.whatsapp.com/send?text=https://ansuman-dhar.github.io/slambook/fillup.html?bookid=' + id_Global)" class="button">
+            <svg>
+            <use href="#whatsapp"></use>
+            </svg>
+            <span>WhatsApp</span>
+            </a>
+
+            <a onclick="window.open('mailto:?subject=Sign%20My%20SlamBook&body=My%20friend%2C%0D%0Asign%20this%20slambook%20and%20let%20me%20know%20more%20about%20you.%0D%0A%0D%0AHere%20is%20the%20link%0D%0Ahttps://ansuman-dhar.github.io/slambook/fillup.html?bookid='+ id_Global)"  class="button">
+            <svg>
+            <use href="#email"></use>
+            </svg>
+            <span>Email</span>
+            </a>
+        </div>
+    </div>
+      
+    <svg class="hidden">
+    <defs>
+        <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol>
+        <symbol id="facebook" viewBox="0 0 24 24" fill="#3b5998" stroke="#3b5998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></symbol>
+        <symbol id="twitter" viewBox="0 0 24 24" fill="#1da1f2" stroke="#1da1f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></symbol>
+        <symbol id="email" viewBox="0 0 24 24" fill="#777" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></symbol>
+        <!--symbol id="linkedin" viewBox="0 0 24 24" fill="#0077B5" stroke="#0077B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></symbol-->
+        <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></symbol>
+        <svg id="whatsapp" x="0px" y="0px" viewBox="0 0 418.135 418.135" style="enable-background:new 0 0 418.135 418.135;" xml:space="preserve">
+        <g>
+            <path style="fill:#7AD06D;" d="M198.929,0.242C88.5,5.5,1.356,97.466,1.691,208.02c0.102,33.672,8.231,65.454,22.571,93.536
+                L2.245,408.429c-1.191,5.781,4.023,10.843,9.766,9.483l104.723-24.811c26.905,13.402,57.125,21.143,89.108,21.631
+                c112.869,1.724,206.982-87.897,210.5-200.724C420.113,93.065,320.295-5.538,198.929,0.242z M323.886,322.197
+                c-30.669,30.669-71.446,47.559-114.818,47.559c-25.396,0-49.71-5.698-72.269-16.935l-14.584-7.265l-64.206,15.212l13.515-65.607
+                l-7.185-14.07c-11.711-22.935-17.649-47.736-17.649-73.713c0-43.373,16.89-84.149,47.559-114.819
+                c30.395-30.395,71.837-47.56,114.822-47.56C252.443,45,293.218,61.89,323.887,92.558c30.669,30.669,47.559,71.445,47.56,114.817
+                C371.446,250.361,354.281,291.803,323.886,322.197z"/>
+            <path style="fill:#7AD06D;" d="M309.712,252.351l-40.169-11.534c-5.281-1.516-10.968-0.018-14.816,3.903l-9.823,10.008
+                c-4.142,4.22-10.427,5.576-15.909,3.358c-19.002-7.69-58.974-43.23-69.182-61.007c-2.945-5.128-2.458-11.539,1.158-16.218
+                l8.576-11.095c3.36-4.347,4.069-10.185,1.847-15.21l-16.9-38.223c-4.048-9.155-15.747-11.82-23.39-5.356
+                c-11.211,9.482-24.513,23.891-26.13,39.854c-2.851,28.144,9.219,63.622,54.862,106.222c52.73,49.215,94.956,55.717,122.449,49.057
+                c15.594-3.777,28.056-18.919,35.921-31.317C323.568,266.34,319.334,255.114,309.712,252.351z"/>
+        </g>
+        </svg>
+    </defs>
+    </svg>
+
+	<section id="home" style="height: 90vh;">
+		<div class="box">
+            <h3>Share this link to your friends and sign them your slambook</h3>
+			<input type="text" id="link"><br>
+			<button style="width: 90%;" onclick="copyText(document.getElementById('link')); this.innerText = 'Copied'">Copy</button>
+			<button style="width: 90%;" onclick="whatsapp();">Share <svg><use href="#share-icon"></use></svg> </button>
+		</div>
+	</section>
+
+	<section class="background section-s" id="yourBooks">
+		<div class="box">
+			<ul id="myBooks" style="list-style-type: none;"></ul>
+		</div>
+	</section>
+	<section class="background section-s" id="signedBooks">
+		<div class="box">
+			<ul id="mysignedBooks" style="list-style-type: none;"></ul>
+		</div>
+	</section>
+    
+	<script defer type="text/javascript" src="./scripts/required.js"></script>
+	<script defer type="text/javascript" src="https://kit.fontawesome.com/fc0c02a2a6.js"></script>
+	<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script defer type="text/javascript" src="./scripts/cookies.js"></script>
+	<script defer type="text/javascript" src="./scripts/script.js"></script>
+</body>
+</html>
