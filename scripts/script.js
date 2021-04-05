@@ -3,6 +3,11 @@ var signedBookList = document.getElementById('mysignedBooks');
 
 document.getElementById('user').innerText = getCookie('name');
 
+var bgintrests = "book,books,reading,children,child,kid,schoolchild";
+$(document).ready(function(){
+    document.body.style.backgroundImage = "url('https://source.unsplash.com/" + innerWidth + "x" + document.body.scrollHeight + "/? " + bgintrests + "')";
+});
+
 var myBooks;
 function viewMyBooks(){
     if (id_Global != null || id_Global != undefined || id_Global != ""){
