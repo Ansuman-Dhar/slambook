@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Know your friends!">
     <link rel="stylesheet" href="./styles/style.css">
-	<link rel="stylesheet" href="./styles/responsive.css">
     <title>SlamBook | View Book</title>
-	<style>
-	    span{ color: rgb(255, 238, 0); }
-	    .box{ width: auto; }
-	</style>
+    <style>
+        span{ color: rgb(255, 238, 0); }
+        .box{
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);    
+        }
+    </style>
 </head>
 <body>
     <div id="cookieAlert">
@@ -48,11 +54,10 @@
         </div>
     </section>
 
-    	<script defer src="./scripts/global.js"></script>
-    	<script defer src="./scripts/requiredFunc.js"></script>
+    <script defer src="./scripts/global.js"></script>
+    <script defer src="./scripts/requiredFunc.js"></script>
 	<script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    	<script defer src="./scripts/cookies.js"></script>
-    	<script defer src="./scripts/view.js"></script>
-	<script defer type="text/javascript" src="./scripts/responsive.js"></script>
+    <script defer src="./scripts/cookies.js"></script>
+    <script defer src="./scripts/view.js"></script>
 </body>
 </html>
