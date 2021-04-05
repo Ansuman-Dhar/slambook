@@ -5,10 +5,14 @@
 		<meta name="description" content="You got a slambook to sign!">
 		<link rel="stylesheet" href="./styles/style.css">
 		<link rel="stylesheet" href="./styles/form.css">
+		<link rel="stylesheet" href="./styles/responsive.css">
 		<title>Slam Book - FillUp</title>
 	</head>
 	<body>
 
+		<div id="landscape">
+			<h1 style="margin-top: 50vh; transform: translateY(-50%);">Please switch to potrait mode</h1>
+		</div>
 		<div id="cookieAlert">
 			<h1>
 				Please allow us to store and access cookies on your browser<br>
@@ -24,7 +28,7 @@
 
 		<section id="fillform"  style="height: 100vh;">
 			<form method="post" class="box" style="padding: 20px;">
-					<ul style="list-style-type: none; font-size: 1.5rem;">
+					<ul style="list-style-type: none;">
 						<h3 style="color: red;">Do NOT enter confidential data</h2>
 						<br><hr>
 						<li>
@@ -33,11 +37,17 @@
 						</li>
 
 						<li>
-							<label for="gend">Your gender</label>
-							<div class="gen">
-								<input type="radio" id="gend" name="gen" value="male" onclick="gender='male'">Male</input>
-								<input type="radio" id="gend" name="gen" value="female" onclick="gender='female'">Female</input>
-							</div>
+							<label class="label">
+								<div class="label-text">Female&nbsp</div>
+								<div class="toggle">
+								<input id="gender" class="toggle-state" type="checkbox" name="check" value="check" />
+								<div class="toggle-inner">
+									<div class="indicator"></div>
+								</div>
+								<div class="active-bg"></div>
+								</div>
+								<div class="label-text">&nbspMale</div>
+							</label>
 						</li>
 
 						<li>

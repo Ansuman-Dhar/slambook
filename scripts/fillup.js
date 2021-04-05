@@ -1,6 +1,14 @@
 var dateObj = new Date();
 var usp = new URLSearchParams(window.location.search);
 
+var gender = 'female';
+document.getElementById('gender').addEventListener('change', () => {
+    if (document.getElementById('gender').checked)
+        gender = 'male';
+    else
+        gender = 'female';
+});
+
 $(document).ready(function(){
     $('form').on('submit', function(e){
         e.preventDefault();

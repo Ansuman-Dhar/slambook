@@ -1,7 +1,24 @@
 /*Form*/
 
+ul{
+	font-size: 1.5rem;
+	min-width: 80%;
+	max-width: 90%;
+	text-align: right;
+}
+
+li{
+	width: 100%;
+	margin: 10px;
+}
+
 .box{
     width: 90vw;
+	position: absolute;
+	height: 90%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);    
 }
 
 input[type="text"]{
@@ -12,7 +29,9 @@ input[type="text"]{
 	outline: none;
 	background-color: #1e1e1e;
 	color: #fff;
-	width: 500px;
+	min-width: 400px;
+	max-width: 90%;
+	width: auto;
 }
 
 input[type="text"]:focus{
@@ -35,6 +54,7 @@ input[type="text"]:hover{
 }
 
 .submit{
+	margin-right: 10%;
 	font-size: 24px;
 	border: 0;
 	background: none;
@@ -56,3 +76,82 @@ input[type="text"]:hover{
 }
 
 /*Form*/
+
+/*Gender Toggle*/
+.label {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.label-text {
+	margin-left: 8px;
+}
+  
+.toggle {
+	isolation: isolate;
+	position: relative;
+	height: 24px;
+	width: 48px;
+	border-radius: 15px;
+	background: #ff91b0;
+	overflow: hidden;
+  }
+  
+  .toggle-inner {
+	z-index: 2;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	height: 22px;
+	width: 46px;
+	border-radius: 15px;
+	overflow: hidden;
+}
+  
+.active-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 200%;
+	background: #ff1b1b;
+	transform: translate3d(-100%, 0, 0);
+	transition: transform 0.05s linear 0.17s;
+}
+.toggle-state {
+	display: none;
+}
+
+.indicator {
+	height: 100%;
+	width: 200%;
+	background: #fff;
+	border-radius: 13px;
+	transform: translate3d(-75%, 0, 0);
+	transition: transform 0.35s cubic-bezier(.6,-0.28,.74,.05);
+}
+
+.toggle-state:checked .indicator{
+	background-color: #000;
+}
+
+.toggle-state:checked ~ .active-bg {
+	transform: translate3d(-50%, 0, 0);
+}
+
+.toggle-state:checked ~ .toggle-inner .indicator {
+	transform: translate3d(25%, 0, 0);
+}
+/*Gender Toggle*/
+
+#landscape{
+	text-align: center;
+	vertical-align: middle;
+	position: fixed;
+	background-color: #000;
+	z-index: 99;
+	height: 100vh;
+	width: 100vw;
+	display: none;
+}

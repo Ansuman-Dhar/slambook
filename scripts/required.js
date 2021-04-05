@@ -3,8 +3,6 @@ var cookieAllowed_Global = false;
 var recieverId;
 var loaded;
 
-var gender;
-
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }

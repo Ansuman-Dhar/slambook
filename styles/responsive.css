@@ -1,0 +1,93 @@
+@media only screen and (max-width: 1140px){
+    .nav-list{
+        flex-direction: column;
+    }
+    .navbar{
+        height: 100vh;
+        flex-direction: column;
+        transition: all 0.7s ease-out;
+    }
+    .rightNav{
+        display: none;
+    }
+    .box-main{
+        flex-direction: column-reverse;
+        max-width: 100%;
+    }
+    .user-icon{
+        text-align: center;
+        width: 100%;
+    }
+    .user-content{
+        border: 2px solid #000;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    .burger{
+        display: block;
+    }
+    .h-nav-resp{
+        height: 72px;
+    }
+    .v-class-resp{
+        opacity: 0;
+    }
+    .section{
+        flex-direction: column-reverse;
+    }
+    #home{
+        background-position-x: 0;
+        background-position-y: 0;
+        background-size: 100% 100%;
+    }
+    .navbar .loader{
+        position: absolute;
+    }
+    .rightNav .loader{
+        display: none;
+    }
+    .box{
+        width: 100%;
+    }
+    #text{
+        display: inline-block;
+        outline: none;
+        color: #fff;
+        font-size: 20px;
+        font-family: 'Signika', sans-serif;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    input[type="text"]{
+        min-width: 100%;
+    }
+    ul{
+        font-size: 1rem;
+    }
+    html{
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 288px) and (max-height: 630px){
+    #landscape{
+        display: block;
+    }
+    #landscape h1 {
+        text-indent:-9999px;
+    }
+    #landscape h1:before {
+        text-indent:0;
+        content:'Screen Not supported';
+        float:left;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 605px) and (max-width: 600px){
+    #landscape{
+        display: block;
+    }
+}
