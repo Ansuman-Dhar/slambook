@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Know your friends!">
-	<meta name="google-site-verification" content="jBMPQPbJfPmpci9YA_92Wr_Q_6fbf_9m3r-L5yA3spU" />
-    	<link rel="stylesheet" href="./styles/share.css">
+    <link rel="stylesheet" href="./styles/share.css">
 	<link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
 	<title>SlamBook | Home</title>
 	<style>
         .loader {
@@ -70,21 +70,28 @@
             }
         }
     </style>
+    <style>
+        section{
+            display: none;
+        }
+    </style>
     <script>
         window.addEventListener('load', function() {
             document.getElementsByClassName('loader')[0].style.display = 'none';
-            document.getElementsByClassName('loader')[1].style.display = 'none';
+            let i_Local;
+            for (let i_Local = 0; i_Local < document.getElementsByTagName('section').length; i_Local++) {
+                document.getElementsByTagName('section')[i_Local].style.display = 'block';;
+            }
         })
     </script>
 </head>
 <body>
 	<nav class="navbar background section-m h-nav-resp">
         <span id="text">SlamBook</span>
-        <div class="loader"></div>
         <ul class="nav-list v-class-resp">            
-            <li><a href="#">Home</a></li>
-            <li><a href="#yourBooks">My SlamBooks</a></li>
-            <li><a href="#signedBooks">Signed SlamBooks</a></li>
+            <li><a href="#" onclick="classlistToggle()">Home</a></li>
+            <li><a href="#yourBooks" onclick="classlistToggle();">My SlamBooks</a></li>
+            <li><a href="#signedBooks" onclick="classlistToggle()">Signed SlamBooks</a></li>
             <!--Add onclick="classlistToggle()" on responsive design-->
         </ul>
         <div class="rightNav v-class-resp">
@@ -179,7 +186,7 @@
 
 	<section id="home" style="height: 90vh;">
 		<div class="box">
-            <h3>Share this link to your friends and sign them your slambook</h3>
+            <h3 style="padding: 10px;"><center>Share this link to your friends and sign them your slambook</center></h3>
 			<input type="text" id="link"><br>
 			<button style="width: 90%;" onclick="copyText(document.getElementById('link')); this.innerText = 'Copied'">Copy</button>
 			<button style="width: 90%;" onclick="whatsapp();">Share <svg><use href="#share-icon"></use></svg> </button>
@@ -196,11 +203,13 @@
 			<ul id="mysignedBooks" style="list-style-type: none;"></ul>
 		</div>
 	</section>
-    
-	<script defer type="text/javascript" src="./scripts/required.js"></script>
+
+	<script defer type="text/javascript" src="./scripts/global.js"></script>
+	<script defer type="text/javascript" src="./scripts/requiredFunc.js"></script>
 	<script defer type="text/javascript" src="https://kit.fontawesome.com/fc0c02a2a6.js"></script>
 	<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script defer type="text/javascript" src="./scripts/cookies.js"></script>
 	<script defer type="text/javascript" src="./scripts/script.js"></script>
+	<script defer type="text/javascript" src="./scripts/responsive.js"></script>
 </body>
 </html>
