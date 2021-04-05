@@ -71,23 +71,3 @@
         overflow: scroll;
     }
 }
-
-@media screen and (max-width: 288px) and (max-height: 630px){
-    #landscape{
-        display: block;
-    }
-    #landscape h1 {
-        text-indent:-9999px;
-    }
-    #landscape h1:before {
-        text-indent:0;
-        content:'Screen Not supported';
-        float:left;
-    }
-}
-
-@media screen and (orientation: landscape) and (max-height: 605px) and (max-width: 600px){
-    #landscape{
-        display: block;
-    }
-}
