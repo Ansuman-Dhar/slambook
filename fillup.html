@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<meta charset="utf-8"></meta>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<meta name="description" content="Know your friends!">
+		<link rel="stylesheet" href="./styles/style.css">
+		<link rel="stylesheet" href="./styles/form.css">
+		<link rel="stylesheet" href="./styles/responsive.css">
+		<title>Slam Book - FillUp</title>
+	</head>
+	<body>
+
+		<div id="landscape">
+			<h1 style="margin-top: 50vh; transform: translateY(-50%);">Please switch to potrait mode</h1>
+		</div>
+		<div id="cookieAlert">
+			<h1>
+				Please allow us to store and access cookies on your browser<br>
+				Do not worry!<br>
+				We only store and access essential data which is vital for this site to work<br>
+				<br><br>
+				By clicking "I allow",<br>
+				we will have rights to store in and access cookies from your browser on this site<br>
+	
+				<button onclick="allowCookies(true)" style="position: absolute; left: 50%; bottom: 40%; transform: translate(-50%, -50%);">I allow</button>
+			</h1>
+		</div>
+
+		<section id="fillform"  style="height: 100vh;">
+			<form method="post" class="box" style="padding: 20px;">
+					<ul style="list-style-type: none;">
+						<h3 style="color: red;">Do NOT enter confidential data</h2>
+						<br><hr>
+						<li>
+							<label for="name">Your name: </label>
+							<input type="text" id="name" name="name" placeholder="e.g Ansuman Dhar">
+						</li>
+
+						<li>
+							<label class="label">
+								<div class="label-text">Female&nbsp</div>
+								<div class="toggle">
+								<input id="gender" class="toggle-state" type="checkbox" name="check" value="check" />
+								<div class="toggle-inner">
+									<div class="indicator"></div>
+								</div>
+								<div class="active-bg"></div>
+								</div>
+								<div class="label-text">&nbspMale</div>
+							</label>
+						</li>
+
+						<li>
+							<label for="bfname">Your best-friend's name: </label>
+							<input type="text" id="bfname" name="bfname" placeholder="e.g Magnet">
+						</li>
+
+						<li>
+							<label for="sname">Your school's name: </label>
+							<input type="text" id="sname" name="sname" placeholder="e.g XYZ School">
+						</li>
+
+						<li>
+							<label for="ho">Your Hobby: </label>
+							<input type="text" id="ho" name="ho" placeholder="e.g Singing">
+						</li>
+
+						<li>
+							<label for="he">Your Hero/heroine: </label>
+							<input type="text" id="he" name="he" placeholder="e.g Dad/Mom">
+						</li>
+
+						<li>
+							<label for="place">Your favourite place: </label>
+							<input type="text" id="place" name="place" placeholder="e.g Heaven">
+						</li>
+
+						<li>
+							<label for="goal">Your goal for life: </label>
+							<input type="text" id="goal" name="goal" placeholder="e.g Being a comedian">
+						</li>
+
+						<li>
+							<label for="favsu">Your favorite subject: </label>
+							<input type="text" id="favsu" name="favsu" placeholder="e.g Biology">
+						</li>
+					</ul>
+				
+				<input type="submit" value="Go" class="submit">
+				
+			</form>
+		</section>
+	</body>
+    <script defer type="text/javascript" src="./scripts/required.js"></script>
+	<script defer type="text/javascript" src="https://kit.fontawesome.com/fc0c02a2a6.js"></script>
+	<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script defer type="text/javascript" src="./scripts/cookies.js"></script>
+	<script defer type="text/javascript" src="./scripts/fillup.js"></script>
+</html>
